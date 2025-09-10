@@ -1,0 +1,67 @@
+/* src/app/globals.css */
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Graduate&family=Kode+Mono:wght@400..700&display=swap");
+
+@theme {
+  --color-deepBlack: #0d0d0d;
+  --color-electricRed: #e50914;
+  --color-amberYellow: #ffb400;
+  --color-lightGrey: #f5f5f5;
+
+  --font-graduate: "Graduate", serif;
+  --font-kodeMono: "Kode Mono", monospace;
+}
+
+/* Custom base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-deepBlack text-lightGrey font-sans;
+    background: radial-gradient(
+      circle,
+      rgba(59, 56, 56, 1) 0%,
+      rgba(38, 36, 36, 1) 5%,
+      rgba(37, 35, 35, 1) 7%,
+      rgba(36, 34, 34, 1) 12%,
+      rgba(35, 33, 33, 1) 15%,
+      rgba(33, 31, 31, 1) 19%,
+      rgba(24, 22, 22, 1) 28%,
+      rgba(23, 21, 21, 1) 36%,
+      rgba(21, 19, 19, 1) 44%,
+      rgba(20, 18, 18, 1) 52%,
+      rgba(18, 16, 16, 1) 60%,
+      rgba(16, 14, 14, 1) 68%,
+      rgba(14, 12, 12, 1) 78%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    background-attachment: fixed;
+  }
+}
+
+/* Custom utilities */
+@layer utilities {
+  .gradient-bg {
+    background: linear-gradient(
+      180deg,
+      var(--color-deepBlack) 0%,
+      rgba(13, 13, 13, 0.8) 50%,
+      rgba(13, 13, 13, 0.6) 100%
+    );
+  }
+
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Swiper custom styles */
+.swiper-pagination-bullet {
+  @apply bg-lightGrey opacity-50 w-3 h-3 mx-1;
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-electricRed opacity-100;
+}
